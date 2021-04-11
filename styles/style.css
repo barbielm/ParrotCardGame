@@ -4,4 +4,39 @@
 body{
     background-color: #EEF9BF;
     font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 56px;
+    line-height: 66px;
+    letter-spacing: -0.004em;
+    color: #75B79E;
+}
+.cards{
+    margin: 0 auto; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.card{
+    width: 117px;
+    height: 146px;
+    background-color: #A7E9AF;
+    margin: 17px;
+    border: 1px solid #99CEA8;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card img{
+    width: 100px;
+}
+
+.title{
+    margin: 40px auto 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
 }
