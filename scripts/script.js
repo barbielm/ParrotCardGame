@@ -1,7 +1,7 @@
 let nCards = 0
 let nRounds = 0
 let lastTurnedCard
-
+let id
 setTimeout(askNumberOfCards,100)
 function askNumberOfCards(){
     while(nCards<4 || nCards>14 || nCards%2==1){
@@ -9,6 +9,7 @@ function askNumberOfCards(){
         nCards = prompt("Com quantas cartas você deseja jogar?")
     }
     sortCards()
+    id = setInterval(timeCounter,1000)
 }
 
 
@@ -96,7 +97,21 @@ function hideCard(element){
 function verifyEndOfGame(){
     nRounds++
     if(verifyTurnedCards()==nCards){
-        alert(`Você ganhou em ${nRounds} jogadas!`)
+        let time = document.querySelector("span").innerText
+        alert(`Você ganhou em ${nRounds} jogadas e demorou ${time} segundos!`)
+        clearInterval(id)
+        setTimeout(SetnextGame,100)
+    }
+}
+
+function timeCounter(){
+    document.querySelector("span").innerText++
+}
+
+function SetnextGame(){
+    let answer = prompt("Deseja reiniciar a partida?")
+    if(answer.toLocaleLowerCase()==="sim"){
+        location.reload()
     }
 }
 
