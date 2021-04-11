@@ -72,6 +72,11 @@ function turnCard(element){
             if(verifyTurnedCards()%2===0){
                 showCard(element)
             }
+            else {
+                showCard(element)
+                setTimeout(hideCard,1000,element)
+                setTimeout(hideCard,1000,lastTurnedCard)
+            }
         } 
         
     }
@@ -82,6 +87,10 @@ function turnCard(element){
 function showCard(element){
     element.querySelector(".front-face").style.transform = "rotateY(-180deg)"
     element.querySelector(".back-face").style.transform = "rotateY(0deg)"
+}
+function hideCard(element){
+    element.querySelector(".front-face").style.transform = "rotateY(0deg)"
+    element.querySelector(".back-face").style.transform = "rotateY(180deg)"
 }
 
 function verifyEndOfGame(){
