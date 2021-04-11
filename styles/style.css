@@ -12,7 +12,7 @@ body{
     color: #75B79E;
 }
 .cards{
-    margin: 0 250px; 
+    margin: 0 100px; 
     display: flex;
     align-items: center;
     justify-content: center;

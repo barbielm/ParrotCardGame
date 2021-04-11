@@ -24,9 +24,19 @@ function sortCards(){
         imagesList.push(List[i%(nCards/2)])
     }
     imagesList.sort(comparator)
-    const listOfCards = document.querySelector(".cards")
-    for(let i=0; i<nCards; i++){
-        listOfCards.innerHTML += `<li class="card" onclick="turnCard(this)">
+    const listOfCards = document.querySelectorAll(".cards")
+    for(let i=0; i<nCards/2; i++){
+        listOfCards[0].innerHTML += `<li class="card" onclick="turnCard(this)">
+                                    <div class="front-face face">
+                                        <img src="imgs/front.png"/>
+                                    </div>
+                                    <div class="back-face face">
+                                        <img src="${imagesList[i]}"/>
+                                    </div>
+                                </li>`
+    }
+    for(let i=nCards/2; i<nCards; i++){
+        listOfCards[1].innerHTML += `<li class="card" onclick="turnCard(this)">
                                     <div class="front-face face">
                                         <img src="imgs/front.png"/>
                                     </div>
